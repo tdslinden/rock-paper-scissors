@@ -22,7 +22,7 @@ function getComputerChoice() {
   return choices[choice];
 }
 
-function determineWinner(playerSelection, computerSelection) {
+function playRound(playerSelection, computerSelection) {
   // Rock beats Scissors
   // Paper beats Rock
   // Scissors beats Paper
@@ -30,10 +30,10 @@ function determineWinner(playerSelection, computerSelection) {
   // Message is displayed in terms of player's perspective
 }
 
-function playRound() {
+function game() {
   const playerSelection = getPlayerChoice();
-  // const computerSelection = getComputerChoice();
-  // determineWinner(playerSelection, computerSelection);
+  const computerSelection = getComputerChoice();
+  // playRound(playerSelection, computerSelection);
 }
 
-playRound();
+game();
