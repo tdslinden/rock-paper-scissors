@@ -23,17 +23,34 @@ function getComputerChoice() {
 }
 
 function playRound(playerSelection, computerSelection) {
-  // Rock beats Scissors
-  // Paper beats Rock
-  // Scissors beats Paper
-  // Else tie
-  // Message is displayed in terms of player's perspective
+  let isWinner = false;
+  let resultMessage = `You ${isWinner ? "Win" : "Lose"}! ${
+    playerSelection.charAt(0).toUpperCase() + playerSelection.slice(1)
+  } beats ${
+    computerSelection.charAt(0).toUpperCase() + computerSelection.slice(1)
+  }`;
+
+  switch (playerSelection) {
+    case "rock":
+      isWinner = computerSelection === "scissors" ? true : false;
+      break;
+    case "paper":
+      isWinner = computerSelection === "rock" ? true : false;
+      break;
+    case "scissors":
+      isWinner = computerSelection === "paper" ? true : false;
+      break;
+    default:
+      return `Tie!`;
+  }
+
+  return resultMessage;
 }
 
 function game() {
   const playerSelection = getPlayerChoice();
   const computerSelection = getComputerChoice();
-  // playRound(playerSelection, computerSelection);
+  playRound(playerSelection, computerSelection);
 }
 
 game();
