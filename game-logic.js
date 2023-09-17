@@ -40,9 +40,9 @@ function playRound(playerSelection, computerSelection) {
     case "scissors":
       isWinner = computerSelection === "paper" ? true : false;
       break;
-    default:
-      return `Tie!`;
   }
+
+  if (playerSelection === computerSelection) resultMessage = "Tie!";
 
   return resultMessage;
 }
